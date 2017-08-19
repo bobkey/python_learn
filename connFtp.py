@@ -1,5 +1,5 @@
 import socket
-def reBanner(ip,port):
+def retBanner(ip,port):
 	try:
 		socket.setdefaulttimeout(2)
 		s = socket.socket()
@@ -11,9 +11,14 @@ def reBanner(ip,port):
 
 def main():
 	ip1='192.168.1.1'
-	ip2='192.168.1.106'
-	port = 21
+	ip2='42.81.28.74'
+	port = 80
 	banner1 = retBanner(ip1,port)
 	if banner1:
 		print '[+]' + ip1 + ': ' + banner1
 	
+	banner2=retBanner(ip2,port)
+	if banner2:
+		print '[+]' + ip2 + ': ' + banner2
+	if __name__ == '__main__':
+		main()
