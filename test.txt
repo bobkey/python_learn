@@ -1,0 +1,7 @@
+total 20
+drwxr-xr-x  3 root root 4096 Aug 19 09:41 .
+drwxr-xr-x 17 root root 4096 Aug 19 09:33 ..
+-rw-r--r--  1 root root  323 Aug 19 09:33 connFtp.py
+drwxr-xr-x  8 root root 4096 Aug 19 09:38 .git
+-rw-r--r--  1 root root   22 Aug 19 09:33 README.md
+-rw-r--r--  1 root root    0 Aug 19 09:41 test.txt
