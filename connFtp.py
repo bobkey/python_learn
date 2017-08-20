@@ -1,3 +1,4 @@
+#!/usr/bin/python
 import socket
 def retBanner(ip,port):
 	try:
@@ -9,16 +10,30 @@ def retBanner(ip,port):
 	except:
 		return
 
+
+
+def checkVulns(banner):
+	if 'SSH-2.0-OpenSSH_7.3p1 Debian-1' in banner:
+		print '[+] SSH-2.0-OpenSSH_7.3p1 Debian-1 is vulnerable.'
+
+	elif 'bbbbbbb' in banner:
+		print 'find a vulnerable'
+
+	else:
+		print '[-] not found vulnerable.'
+
+	return		
+
 def main():
-	ip1='192.168.1.1'
-	ip2='42.81.28.74'
-	port = 80
-	banner1 = retBanner(ip1,port)
-	if banner1:
-		print '[+]' + ip1 + ': ' + banner1
-	
-	banner2=retBanner(ip2,port)
-	if banner2:
-		print '[+]' + ip2 + ': ' + banner2
-	if __name__ == '__main__':
-		main()
+	portList = [21,22,25,80,110,443]
+#	for x in range(1, 255):	
+	ip ='192.168.128.135'
+	for port in portList:
+		banner = retBanner(ip,port)
+		if banner:
+			print '[+]' + ip + ': ' + banner
+			checkVulns(banner)
+
+if __name__ == '__main__':
+	main()
+
